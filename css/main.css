@@ -1687,6 +1687,7 @@ h1 {
 .photo--1 { top: 18%; left: 4%;   --r: -6deg; animation-delay: 0s;   }
 .photo--2 { top: 45%; right: 5%;  --r: 5deg;  animation-delay: 1.5s; }
 .photo--3 { top: 68%; left: 6%;   --r: 4deg;  animation-delay: 3s;   }
+.photo--4 { top: 30%; right: 8%; --r: -4deg; animation-delay: 4.5s; }
 
 @keyframes float {
   0%, 100% { transform: translateY(0) rotate(var(--r)); }
