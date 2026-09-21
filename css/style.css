@@ -91,6 +91,46 @@ body{
     .description{
         font-size: 2rem;
     }
+
+
+    .floating-photos {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.greetings, .description, .button {
+  position: relative;
+  z-index: 2; /* el texto siempre queda encima de las fotos */
+}
+
+.photo {
+  position: absolute;
+  width: 110px;
+  height: 110px;
+  object-fit: cover;
+  border-radius: 12px;
+  border: 4px solid #fff;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+  --r: 0deg;
+  transform: rotate(var(--r));
+  animation: float 6s ease-in-out infinite;
+}
+
+.photo--1 { top: 8%;    left: 6%;   --r: -8deg; animation-delay: 0s;   }
+.photo--2 { top: 10%;   right: 6%;  --r: 7deg;  animation-delay: 1.2s; }
+.photo--3 { bottom: 10%; left: 8%;  --r: 6deg;  animation-delay: 2.4s; }
+.photo--4 { bottom: 8%;  right: 7%; --r: -5deg; animation-delay: 3.6s; }
+
+@keyframes float {
+  0%, 100% { transform: translateY(0) rotate(var(--r)); }
+  50%      { transform: translateY(-14px) rotate(var(--r)); }
+}
+
+@media screen and (max-width: 574px) {
+  .photo { width: 65px; height: 65px; }
+}
     
     .button a{
         font-size: 1rem;
