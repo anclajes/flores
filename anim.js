@@ -1,5 +1,8 @@
 // Sincronizar las letras con la canción
 var audio = document.querySelector("audio");
+audio.addEventListener("loadedmetadata", function () {
+  audio.currentTime = 65; // segundo en el que arranca (65 = minuto 1:05)
+});
 var lyrics = document.querySelector("#lyrics");
 
 // Array de objetos que contiene cada línea y su tiempo de aparición en segundos
