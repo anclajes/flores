@@ -1664,4 +1664,43 @@ h1 {
   }
 }
 
+.floating-photos {
+  position: absolute;
+  inset: 0;
+  z-index: 6;
+  pointer-events: none;
+}
+
+.photo {
+  position: absolute;
+  width: 130px;
+  height: 130px;
+  object-fit: cover;
+  border-radius: 10px;
+  border: 4px solid #fff;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+  --r: 0deg;
+  transform: rotate(var(--r));
+  animation: float 6s ease-in-out infinite;
+}
+
+.photo--1 { top: 18%; left: 4%;   --r: -6deg; animation-delay: 0s;   }
+.photo--2 { top: 45%; right: 5%;  --r: 5deg;  animation-delay: 1.5s; }
+.photo--3 { top: 68%; left: 6%;   --r: 4deg;  animation-delay: 3s;   }
+
+@keyframes float {
+  0%, 100% { transform: translateY(0) rotate(var(--r)); }
+  50%      { transform: translateY(-15px) rotate(var(--r)); }
+}
+
+@media only screen and (max-width: 600px) {
+  .photo {
+    width: 75px;
+    height: 75px;
+  }
+  .photo--2 {
+    display: none; /* en pantallas chicas, muestra solo 2 para no saturar */
+  }
+}
+
 /* Agregar más estilos según sea necesario */
